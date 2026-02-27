@@ -1,5 +1,9 @@
 import streamlit as st
-
+st.set_page_config(
+    page_title="Phelps Deal Analyzer",
+    page_icon="📊",
+    layout="wide"
+)
 def sba_guarantee_fee(guaranteed_amount: float) -> float:
     return 0.035 * guaranteed_amount
 
@@ -146,4 +150,5 @@ else:
 if min_20 is None:
     c2.error(f"-20%: can't reach DSCR {target_dscr:.2f} even with 80% down.")
 else:
+
     c2.success(f"-20%: ${min_20:,.0f} ({(min_20/purchase_price)*100:.1f}%)")
